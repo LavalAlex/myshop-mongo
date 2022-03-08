@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type List {
+  id: String!
+  list: [String!]!
+  total: Float!
+  user: User!
+}
+
+type Mutation {
+  editList(input: updateInputList!): List!
+  lists(idUser: String!): [List!]!
+}
+
+type Query {
+  allList: [List!]!
+  getUsers: [User!]!
+  helloAngel: String!
+  sayHelloUser: String!
+}
+
+type User {
+  email: String!
+  password: String!
+  roles: String!
+  username: String!
+}
+
+input updateInputList {
+  idList: String!
+  list: [String!]
+  total: Float
+  uderId: String
+}

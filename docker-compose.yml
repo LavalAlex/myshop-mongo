@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  appdocker: 
+    container_name: myshop-app-mongo
+    restart: always
+    build: .
+    ports:
+      - 4000:3000
+    links:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+  
+  mongo:
+    container_name: myshop-mongo
+    image: mongo
+    ports:
+      - "27020:27017"
+    logging:
+      driver: none
